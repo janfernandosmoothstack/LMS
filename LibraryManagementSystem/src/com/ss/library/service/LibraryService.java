@@ -43,7 +43,10 @@ public class LibraryService {
 		for(Author checkId : authorList) {
 			if(checkId.getAuthorId().equals(authorId)) {
 				listIndex = authorList.indexOf(checkId);// get index of the record to be updated
-				authorList.get(listIndex).setAuthorName(authorName); //update the record
+				
+				if(!"N/A".equals(authorName)) {
+					authorList.get(listIndex).setAuthorName(authorName); //update the record
+				}
 				AuthorDAO.writeAuthor(authorList); //write new list to file
 				
 				System.out.println();

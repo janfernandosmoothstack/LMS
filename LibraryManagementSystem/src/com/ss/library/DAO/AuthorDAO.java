@@ -31,11 +31,6 @@ public class AuthorDAO {
 				authorList.add(authorRecord);
 			}
 			
-			//Output list test
-			/*for(Author authorOut : authorList) {
-				System.out.println(authorOut.getAuthorId() + " " + authorOut.getAuthorName());
-			}*/
-			
 		} catch (FileNotFoundException e) {
 			System.out.println("Error.");
 		} catch (IOException e) {
