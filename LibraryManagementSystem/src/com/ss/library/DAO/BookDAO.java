@@ -30,24 +30,16 @@ public class BookDAO {
 				Book bookRecord = new Book(inputLine);
 				bookList.add(bookRecord);
 			}
-			
-			//Output list test
-			/*for(Book bookOut : bookList) {
-				System.out.println(bookOut.getBookId() + " " + bookOut.getBookName() + " " + bookOut.getPubId() + " " + bookOut.getAuthorId());
-			}*/
 				
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Error.");
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Error.");
 		} finally {
 			try {
 				br.close(); //close file
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				System.out.println("Error.");
 			}
 		}
 		return bookList;
@@ -72,14 +64,12 @@ public class BookDAO {
 				bw.write(sb.toString());
 				
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				System.out.println("Error.");
 			} finally {
 				try {
 					bw.close();
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+					System.out.println("Error.");
 				}
 			}
 		}
